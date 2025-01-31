@@ -1,0 +1,1 @@
+Projeto idiota e batido para treinar ts e react
