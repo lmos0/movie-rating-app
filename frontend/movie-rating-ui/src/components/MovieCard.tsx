@@ -25,7 +25,9 @@ const MovieCard: React.FC<MovieCardProps> = ({movie}) => {
           <span className="rating-count">({movie.ratings.length} reviews)</span>
         </div>
         <div className="movie-footer">
-        <small className="movie-date">Added: {movie.createdAt ? new Date(movie.createdAt).toLocaleDateString() : 'N/A'}</small>
+          <small className="movie-date">
+            Added: {movie.createdAt ? new Date(movie.createdAt).toLocaleDateString() : 'N/A'}
+          </small>
         </div>
       </div>
     </div>

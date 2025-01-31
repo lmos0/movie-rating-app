@@ -22,8 +22,9 @@ const Register:React.FC = () => {
         }
     }
 
-    return(<div>
-        <h2>Register</h2>
+    return(
+        <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px' }}>
+        <h2 style={{ textAlign: 'center', marginBottom: '1.5rem' }}>Register</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label>Name:</label>
@@ -31,6 +32,7 @@ const Register:React.FC = () => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              style={{ width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
             />
           </div>
           <div>
@@ -39,6 +41,7 @@ const Register:React.FC = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              style={{ width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
             />
           </div>
           <div>
@@ -47,11 +50,15 @@ const Register:React.FC = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              style={{ width: '100%', padding: '0.5rem', marginBottom: '1rem' }}
             />
           </div>
-          <button type="submit">Register</button>
+          <button type="submit" style={{ width: '100%' }}>Register</button>
         </form>
-      </div>)
+      </div>
+
+
+    )
 }
 
 export default Register

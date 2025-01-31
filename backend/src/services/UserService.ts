@@ -1,16 +1,18 @@
 import { PrismaClient } from "@prisma/client";
 import { PasswordService } from "./PasswordService";
-import { error } from "console";
-import { Request, Response } from "express";
+import { JwtService } from "./JwtService";
+
 
 
 export class UserService {
     private prisma: PrismaClient;
     private passwordService: PasswordService;
+    private jwtService: JwtService;
 
     constructor(){
-        this.prisma = new PrismaClient
-        this.passwordService = new PasswordService
+        this.prisma = new PrismaClient()
+        this.passwordService = new PasswordService()
+        this.jwtService = new JwtService()
     }
 
     async createUser(name: string, email: string, password: string){
@@ -62,7 +64,16 @@ export class UserService {
             return userWithOutPassword
 
     
-}
+    }
+    async login(email: string, password: string){
+        const user = await this.validadteUser(email,password)
+        if(!user){
+            return null
+        }
+
+        const token = this.jwtService.generateToken({userId: user.id})
+        return {user,token}
+    }
    
     }
 

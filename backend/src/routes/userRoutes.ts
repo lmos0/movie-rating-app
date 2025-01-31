@@ -1,5 +1,6 @@
 import { Router, Response, Request } from "express";
 import { UserController } from "../controllers/userController";
+import { authenticate } from "../middleware/authMiddleware";
 
 const router:Router = Router()
 const userController = new UserController()
@@ -14,6 +15,12 @@ router.get('/users', (req:Request, res: Response) => {
 
 router.post('/login', (req:Request, res:Response) => {
     userController.loginUser(req,res)
+})
+
+router.get('/profile', authenticate, (req,res) => {
+    const userId = (req as any).userId
+    res.json({message: `Bem-vindo, user ${userId}`})
+
 })
 
 export default router

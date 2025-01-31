@@ -8,7 +8,7 @@ const UserRatings:React.FC = () => {
     useEffect(() => {
         const loadRatings = async () => {
             try {
-                const data = await fetchUserRatings(1) //replace
+                const data = await fetchUserRatings('uuid-doidona') //replace
                 setRatings(data)
             } catch (error) {
                 console.error('Erro ao buscar os dados', error);

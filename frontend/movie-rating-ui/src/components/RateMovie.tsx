@@ -21,24 +21,37 @@ const RateMovie: React.FC = () => {
 
     return(
         <div>
-            <h2>Avalie o Filme</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Movie ID:</label>
-                    <input type="number" value={movieId} onChange={(e) => setMovieId(Number(e.target.value))} />
-                </div>
-                    <div>
-                    <label>Nota (1-10)</label>
-                    <input type="number" value={score} onChange={(e) => setScore(Number(e.target.value))} min="1" max="10" />
-                    </div>
-                <div>
-                    <label htmlFor="">Comment:</label>
-                    <input type="text" name="" id="" value={comment} onChange={(e) => setComment(e.target.value)} />
-                </div>
-                    <button type="submit">Enviar Avaliação</button>
-
-            </form>
+      <h2>Rate a Movie</h2>
+      <form onSubmit={handleSubmit} className="form">
+        <div>
+          <label>Movie ID:</label>
+          <input
+            type="number"
+            value={movieId}
+            onChange={(e) => setMovieId(Number(e.target.value))}
+          />
         </div>
+        <div>
+          <label>Score (1-10):</label>
+          <input
+            type="number"
+            value={score}
+            onChange={(e) => setScore(Number(e.target.value))}
+            min="1"
+            max="10"
+          />
+        </div>
+        <div>
+          <label>Comment:</label>
+          <input
+            type="text"
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+          />
+        </div>
+        <button type="submit">Submit Rating</button>
+      </form>
+    </div>
     )
 }
 

@@ -20,3 +20,15 @@ export const fetchUserRatings = async (userId:string) => {
     const response = await api.get(`/ratings?userId=${userId}`)
     return response.data
 }
+
+// User
+
+export const registerUser = async(name:string, email:string, password:string) => {
+    const response = await api.post('/users', {name, email, password})
+    response.data
+}
+
+export const loginUser = async(email:string, password:string) => {
+    const response = await api.post('/login', {email, password})
+    return response.data
+}

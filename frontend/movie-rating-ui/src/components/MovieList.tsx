@@ -35,11 +35,13 @@ const MovieList: React.FC = () => {
 
     return (
         <div>
-        <h2>Movies</h2>
-        <ul>
+        <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Filmes</h2>
+        <ul className="movie-list">
           {movies.map((movie) => (
-            <li key={movie.id}>
-              <strong>{movie.title}</strong> ({movie.year}) - Directed by {movie.director}
+            <li key={movie.id} className="movie-item">
+              <h3>{movie.title}</h3>
+              <p>Directed by: {movie.director}</p>
+              <p>Year: {movie.year}</p>
             </li>
           ))}
         </ul>
