@@ -1,0 +1,78 @@
+# ================================
+# Node.js
+# ================================
+node_modules/       # Node.js dependencies
+npm-debug.log*      # npm debug logs
+yarn-debug.log*     # Yarn debug logs
+yarn-error.log*     # Yarn error logs
+.pnpm-debug.log*    # pnpm debug logs
+package-lock.json   # npm lock file (if using npm)
+yarn.lock           # Yarn lock file (if using Yarn)
+pnpm-lock.yaml      # pnpm lock file (if using pnpm)
+
+# ================================
+# TypeScript
+# ================================
+*.tsbuildinfo       # TypeScript build info files
+dist/               # Compiled output (if using `tsc` to compile to JS)
+
+# ================================
+# React
+# ================================
+build/              # React production build folder
+.eslintcache        # ESLint cache
+*.log               # Log files
+
+# ================================
+# Environment Variables
+# ================================
+.env                # Local environment variables
+.env.local          # Local environment variables (overrides)
+.env.development    # Development environment variables
+.env.test           # Test environment variables
+.env.production     # Production environment variables
+
+# ================================
+# Prisma
+# ================================
+prisma/migrations/  # Prisma migration files (if not checked in)
+prisma/dev.db       # Local SQLite database (if using SQLite)
+prisma/*.db         # Any local database files
+.prisma/            # Prisma CLI cache
+
+# ================================
+# IDE and Editor Files
+# ================================
+.DS_Store           # macOS folder metadata
+.idea/              # JetBrains IDE (e.g., IntelliJ, WebStorm)
+.vscode/            # Visual Studio Code settings
+*.swp               # Vim swap files
+*.swo               # Vim swap files
+
+# ================================
+# Misc
+# ================================
+*.lock              # Generic lock files (if not already covered)
+.cache/             # Build tool caches (e.g., Babel, Webpack)
+.temp/              # Temporary files
+tmp/                # Temporary files
+
+# Webpack/Vite
+.cache/
+.vite/
+
+# ================================
+# Docker
+# ================================
+
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# ================================
+# Testing
+# ================================
+
+
+.jest/
+coverage/
